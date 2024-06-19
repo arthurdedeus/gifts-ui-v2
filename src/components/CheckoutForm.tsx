@@ -32,7 +32,6 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px;
-  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   width: 143px;
 `;
@@ -44,9 +43,6 @@ const TextInput = styled.textarea`
   resize: none;
   width: 319px;
   overflow: hidden;
-
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
 `;
 
 export const CheckoutForm = () => {

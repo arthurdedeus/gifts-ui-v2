@@ -12,7 +12,6 @@ const BaseButton = styled.button<ButtonHTMLAttributes<HTMLButtonElement>>`
   padding: 5px 10px;
   font-size: 0.9rem;
   font-weight: 300;
-  font-family: 'Roboto', sans-serif;
 
   transition: background-color 0.3s;
 

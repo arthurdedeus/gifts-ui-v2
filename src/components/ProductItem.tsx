@@ -50,10 +50,10 @@ export const ProductItem: React.FC<ProductItemProps> = ({ product, setIsDrawerOp
   return (
     <Item>
       <Image src={product.image} alt={product.name} size="sm" />
-      <h2 style={{ fontWeight: 300, marginBottom: 0 }}>{product.name}</h2>
-      <p style={{ marginTop: '5px' }}>{product.description}</p>
+      <h2 style={{ marginBottom: 0 }}>{product.name}</h2>
+      <p style={{ marginTop: '5px', }}>{product.description}</p>
       <div>
-        <p style={{ marginBottom: '5px' }}>{formatCurrency(product.price)}</p>
+        <p style={{ marginBottom: '5px', }}>{formatCurrency(product.price)}</p>
         <Button text="Adicionar ao carrinho" onClick={handleAddToCart} />
       </div>
     </Item>

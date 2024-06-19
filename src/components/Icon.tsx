@@ -1,3 +1,5 @@
+import 'material-symbols';
+
 type IconProps = {
   name: string;
   style?: React.CSSProperties;

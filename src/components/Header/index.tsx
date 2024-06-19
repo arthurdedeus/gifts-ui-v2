@@ -40,7 +40,7 @@ export const Header = ({ isCheckout = false, handleCartIconClick, isDrawerOpen }
 
   return (
     <StyledHeader className="header" isCheckout={isCheckout}>
-      <h1 style={{ margin: 0, cursor: 'pointer', fontSize: '1.8rem' }} onClick={handletTitleClick}>
+      <h1 style={{ margin: 0, cursor: 'pointer', fontSize: '1.6rem', fontWeight: 300 }} onClick={handletTitleClick}>
         Presentes Carla e Arthur
       </h1>
       {!isCheckout && <CartIcon onClick={handleCartIconClick} />}

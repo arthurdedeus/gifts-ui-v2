@@ -68,6 +68,34 @@ export const GridContainer: React.FC<GridContainerProps> = ({ setIsDrawerOpen })
       price: 600,
       image: 'https://via.placeholder.com/150',
     },
+    {
+      id: 7,
+      name: 'Gift 7',
+      description: 'Description 7',
+      price: 700,
+      image: 'https://via.placeholder.com/150',
+    },
+    {
+      id: 8,
+      name: 'Gift 8',
+      description: 'Description 8',
+      price: 800,
+      image: 'https://via.placeholder.com/150',
+    },
+    {
+      id: 9,
+      name: 'Gift 9',
+      description: 'Description 9',
+      price: 900,
+      image: 'https://via.placeholder.com/150',
+    },
+    {
+      id: 10,
+      name: 'Gift 10',
+      description: 'Description 10',
+      price: 1000,
+      image: 'https://via.placeholder.com/150',
+    }
   ]
 
 

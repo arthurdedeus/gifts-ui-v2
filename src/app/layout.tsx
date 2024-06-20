@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
 
 
 const roboto = Roboto({
@@ -22,7 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className}>
-      <body >{children}</body>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={2000}
+        hideProgressBar
+        closeButton={false}
+        closeOnClick
+      />
+        <body >{children}</body>
     </html>
   );
 }

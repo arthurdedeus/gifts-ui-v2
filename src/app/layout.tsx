@@ -3,6 +3,9 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 const roboto = Roboto({
   weight: ['100', '300', '400'],
@@ -30,6 +33,8 @@ export default function RootLayout({
         closeButton={false}
         closeOnClick
       />
+      <Analytics />
+      <SpeedInsights />
         <body >{children}</body>
     </html>
   );

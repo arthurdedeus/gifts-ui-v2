@@ -3,17 +3,17 @@ import { useEffect } from 'react';
 import { formatCurrency } from '../utils';
 import { Cart } from './Cart';
 import { Footer } from './Footer';
-import { useCart } from '@/contexts/CartContext';
 import { Button } from './Button';
 import { useRouter } from 'next/navigation';
 import { AppRoutes } from '@/enums';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 interface CartDrawerProps {
   isOpen: boolean;
 }
 
 export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen }) => {
-  const { totalPrice } = useCart();
+  const { totalPrice } = useLocalStorage('cart');
   const router = useRouter();
 
   useEffect(() => {

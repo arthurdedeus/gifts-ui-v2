@@ -4,12 +4,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import styled from 'styled-components';
 
-import { useCart } from '../contexts/CartContext';
-import { ActionType } from '../enums';
 import { Product } from '../types';
 import { formatCurrency } from '../utils';
 import { Button } from './Button';
 import { Image } from './Image';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 type ProductItemProps = {
   product: Product;
@@ -39,12 +38,12 @@ const Item = styled.div`
 `;
 
 export const ProductItem: React.FC<ProductItemProps> = ({ product, setIsDrawerOpen }) => {
-  const { dispatch } = useCart();
+  const { addItem } = useLocalStorage('cart')
 
   const handleAddToCart = () => {
     toast.success(`${product.name} adicionado ao carrinho!`);
     setIsDrawerOpen(true);
-    dispatch({ type: ActionType.ADD_ITEM, payload: { ...product, quantity: 1 } });
+    addItem(product)
   };
 
   return (

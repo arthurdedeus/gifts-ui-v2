@@ -1,9 +1,7 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 import styled from 'styled-components';
 
-import { useCreateCheckoutMutation, useCreateUserMutation } from '../api/hooks/useCreateCheckout';
-import { useCart } from '../contexts/CartContext';
 import { Button } from './Button';
 import { QRCodeModal } from './QRCodeModal';
 
@@ -46,8 +44,6 @@ const TextInput = styled.textarea`
 `;
 
 export const CheckoutForm = () => {
-  // const createCheckout = useCreateCheckoutMutation();
-  // const createUser = useCreateUserMutation();
   const [isQRCodeModalOpen, setIsQRCodeModalOpen] = useState<boolean>(false);
   const [qrCodeUrl, setQRCodeUrl] = useState<string>('');
   const [brCode, setBrCode] = useState<string>('');
@@ -58,7 +54,6 @@ export const CheckoutForm = () => {
     message: '',
   };
   const [formState, setFormState] = useState<FormState>(formInitialValues);
-  const { state } = useCart();
 
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     e.target.style.height = 'inherit'; // Reset height to ensure shrinking on delete
@@ -81,35 +76,8 @@ export const CheckoutForm = () => {
       last_name: formState.last_name,
     };
     console.log({ userData })
-    // createUser.mutate({ userData });
   };
 
-  // useEffect(() => {
-  //   // const token = createUser?.data?.auth_token;
-  //   // if (!token) {
-  //   //   return;
-  //   // }
-  //   const checkoutData = {
-  //     message: formState.message,
-  //     items: state.items.map(item => ({
-  //       gift_id: item.id,
-  //       quantity: item.quantity,
-  //     })),
-  //   };
-  //   console.log({ checkoutData })
-  //   // createCheckout.mutate({ data: checkoutData, token: token });
-  //   // createUser.reset();
-  // }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // useEffect(() => {
-  //   const qrCode = createCheckout.data?.qr_code;
-  //   const brCode = createCheckout.data?.br_code;
-  //   if (createCheckout.isSuccess && qrCode && brCode) {
-  //     setQRCodeUrl(qrCode);
-  //     setBrCode(brCode);
-  //     setIsQRCodeModalOpen(true);
-  //   }
-  // }, [createCheckout.isSuccess, createCheckout.data?.qr_code]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const closeModal = () => {
     setIsQRCodeModalOpen(false);

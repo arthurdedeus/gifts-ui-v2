@@ -3,7 +3,7 @@ import { Cart } from '@/components/Cart';
 import { CheckoutForm } from '@/components/CheckoutForm';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { useCart } from '@/contexts/CartContext';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { formatCurrency } from '@/utils';
 import styled from 'styled-components';
 
@@ -29,7 +29,7 @@ const CheckoutContainer = styled.div`
 `;
 
 export default function Checkout () {
-  const { totalPrice } = useCart();
+  const { totalPrice } = useLocalStorage('cart')
 
   return (
     <CheckoutContainer>

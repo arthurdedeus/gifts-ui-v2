@@ -22,3 +22,8 @@ export type CartItemProps = {
   handleRemoveItem: (id: number, name: string) => void;
   handleUpdateQuantity: (id: number, quantity: number, name: string) => void;
 };
+
+
+export interface CartState {
+  items: CartItem[];
+}

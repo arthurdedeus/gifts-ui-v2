@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { useCart } from '../contexts/CartContext';
 import { Icon } from './Icon';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 type CartIconProps = {
   onClick?: () => void;
 };
 
 export const CartIcon = ({ onClick }: CartIconProps) => {
-  const { state } = useCart();
-  const itemCount = state.items.reduce((total, item) => total + item.quantity, 0);
+  const { storedValue } = useLocalStorage('cart')
+  const itemCount = storedValue.items.reduce((total, item) => total + item.quantity, 0);
 
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { Button } from './Button';
 import { QRCodeModal } from './QRCodeModal';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 interface FormState {
   email: string;
@@ -54,6 +55,7 @@ export const CheckoutForm = () => {
     message: '',
   };
   const [formState, setFormState] = useState<FormState>(formInitialValues);
+  const { storedValue, removeValue, totalPrice } = useLocalStorage('cart')
 
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     e.target.style.height = 'inherit'; // Reset height to ensure shrinking on delete
@@ -68,14 +70,24 @@ export const CheckoutForm = () => {
     }));
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    const userData = {
+    const payload = {
       email: formState.email,
       first_name: formState.first_name,
       last_name: formState.last_name,
+      message: formState.message,
+      total: totalPrice,
+      items: storedValue.items,
     };
-    console.log({ userData })
+
+    await fetch('/api/checkouts', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+
+    removeValue();
+    setFormState(formInitialValues);
   };
 
 

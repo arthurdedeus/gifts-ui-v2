@@ -18,6 +18,7 @@ type LocalStorageHook = {
   totalPrice: number
   addItem: (item: Product) => void
   removeItem: (id: number) => void
+  removeValue: () => void
   updateQuantity: (id: number, quantity: number) => void
 }
 
@@ -167,5 +168,5 @@ export function useLocalStorage(
   useEventListener('storage', handleStorageChange)
   useEventListener('local-storage', handleStorageChange)
 
-  return {storedValue, totalPrice, addItem, removeItem, updateQuantity}
+  return {storedValue, totalPrice, addItem, removeItem, removeValue, updateQuantity}
 }

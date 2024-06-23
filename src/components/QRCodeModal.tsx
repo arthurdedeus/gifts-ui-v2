@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import styled, { keyframes } from 'styled-components';
 
 import { Button } from './Button';
+import Image from 'next/image';
 
 const fadeIn = keyframes`
   from {
@@ -51,7 +52,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ qrCodeUrl, brCode, onC
   return (
     <ModalBackdrop onClick={onClose}>
       <ModalContent onClick={e => e.stopPropagation()}>
-        <img src={qrCodeUrl} alt="QR Code" style={{ paddingBottom: '10px' }} />
+        <Image width={200} height={200} src={qrCodeUrl} alt="QR Code" />
         <p>Escaneie o QR Code pelo aplicativo do seu banco para pagar</p>
         <Button onClick={handleCopyLink} style={{ marginBottom: '5px' }} text="Copiar link" />
         <Button onClick={onClose} text="Fechar" />

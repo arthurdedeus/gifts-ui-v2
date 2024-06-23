@@ -80,14 +80,15 @@ export const CheckoutForm = () => {
       total: totalPrice,
       items: storedValue.items,
     };
-
-    await fetch('/api/checkouts', {
+    const response = await fetch('/api/checkouts', {
       method: 'POST',
       body: JSON.stringify(payload),
     });
+    const data = await response.json();
 
-    removeValue();
-    setFormState(formInitialValues);
+    setBrCode(data.brCode);
+    setQRCodeUrl(data.qrCode);
+    setIsQRCodeModalOpen(true);
   };
 
 

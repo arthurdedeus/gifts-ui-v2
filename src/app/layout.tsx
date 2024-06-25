@@ -1,10 +1,11 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "./globals.css";
 import { ToastContainer } from "react-toastify";
 
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { StyledComponentsRegistry } from "@/ServerStyleSheet";
 
 
 const roboto = Roboto({
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.className}>
       <body>
+      <StyledComponentsRegistry>
         <ToastContainer
           position="bottom-left"
           autoClose={2000}
@@ -37,6 +39,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

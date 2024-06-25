@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type PaginatedResponse<T> = {
   count: number;
   next: string | null;
@@ -10,7 +12,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  image: string;
+  image: StaticImageData;
 }
 
 export interface CartItem extends Product {

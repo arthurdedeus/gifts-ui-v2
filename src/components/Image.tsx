@@ -1,4 +1,4 @@
-import NextImage from 'next/image';
+import NextImage, { StaticImageData } from 'next/image';
 
 const heightMap = {
   sm: 125,
@@ -7,7 +7,7 @@ const heightMap = {
 }
 
 type ImageProps = {
-  src: string;
+  src: StaticImageData;
   alt: string;
   size?: 'sm' | 'md' | 'lg';
 };

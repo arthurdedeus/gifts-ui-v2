@@ -26,16 +26,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className}>
-      <ToastContainer
-        position="bottom-left"
-        autoClose={2000}
-        hideProgressBar
-        closeButton={false}
-        closeOnClick
-      />
-      <Analytics />
-      <SpeedInsights />
-        <body >{children}</body>
+      <body>
+        <ToastContainer
+          position="bottom-left"
+          autoClose={2000}
+          hideProgressBar
+          closeButton={false}
+          closeOnClick
+        />
+        <Analytics />
+        <SpeedInsights />
+        {children}
+      </body>
     </html>
   );
 }

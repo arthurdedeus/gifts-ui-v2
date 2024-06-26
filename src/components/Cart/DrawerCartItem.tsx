@@ -1,6 +1,6 @@
-import { CartItemProps } from '../../types';
-import { formatCurrency } from '../../utils';
-import { Button } from '../Button';
+import { Button } from '@/components/Button';
+import { CartItemProps } from '@/types';
+import { formatCurrency } from '@/utils';
 
 export const DrawerCartItem = ({ item, handleRemoveItem, handleUpdateQuantity }: CartItemProps) => {
   return (

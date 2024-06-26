@@ -1,11 +1,12 @@
-'use client'
+'use client';
+
 import { useEffect, useState } from 'react';
 
-import { CartDrawer } from '../components/CartDrawer';
-import { GridContainer } from '../components/GridContainer';
-import { Header } from '../components/Header';
+import { CartDrawer } from '@/components/CartDrawer';
+import { GridContainer } from '@/components/GridContainer';
+import { Header } from '@/components/Header';
 
-export default function Home () {
+export default function Home() {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
@@ -27,9 +28,9 @@ export default function Home () {
 
   return (
     <>
-      <Header handleCartIconClick={toggleDrawer} isDrawerOpen={isDrawerOpen} />
+      <Header handleCartIconClick={toggleDrawer} />
       <CartDrawer isOpen={isDrawerOpen} />
       <GridContainer setIsDrawerOpen={setIsDrawerOpen} />
     </>
   );
-};
+}

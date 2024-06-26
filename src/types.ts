@@ -1,11 +1,4 @@
-import { StaticImageData } from "next/image";
-
-export type PaginatedResponse<T> = {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: T[];
-};
+import { StaticImageData } from 'next/image';
 
 export interface Product {
   id: number;
@@ -24,7 +17,6 @@ export type CartItemProps = {
   handleRemoveItem: (id: number, name: string) => void;
   handleUpdateQuantity: (id: number, quantity: number, name: string) => void;
 };
-
 
 export interface CartState {
   items: CartItem[];

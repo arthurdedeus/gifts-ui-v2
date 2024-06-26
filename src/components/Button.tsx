@@ -1,8 +1,8 @@
-import { lightPink, pink } from '@/colors';
 import { ButtonHTMLAttributes } from 'react';
 
 import styled from 'styled-components';
 
+import { lightPink, pink } from '@/colors';
 
 const BaseButton = styled.button<ButtonHTMLAttributes<HTMLButtonElement>>`
   border: 0;

@@ -2,8 +2,8 @@ import { toast } from 'react-toastify';
 
 import styled from 'styled-components';
 
-import { CheckoutCartItem } from './CheckoutCartItem';
-import { DrawerCartItem } from './DrawerCartItem';
+import { CheckoutCartItem } from '@/components/Cart/CheckoutCartItem';
+import { DrawerCartItem } from '@/components/Cart/DrawerCartItem';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 type CartProps = {
@@ -18,7 +18,7 @@ const CartItemsList = styled.ul<CartItemListProps>`
 `;
 
 export const Cart = ({ isCheckout = false }: CartProps) => {
-  const { storedValue, removeItem, updateQuantity } = useLocalStorage('cart')
+  const { storedValue, removeItem, updateQuantity } = useLocalStorage('cart');
 
   const handleRemoveItem = (id: number, name: string) => {
     removeItem(id);
@@ -26,11 +26,11 @@ export const Cart = ({ isCheckout = false }: CartProps) => {
   };
 
   const handleUpdateQuantity = (id: number, quantity: number, name: string) => {
-    updateQuantity(id, quantity)
+    updateQuantity(id, quantity);
 
     if (quantity < 1) {
       toast.success(`${name} foi removido do carrinho!`);
-      return
+      return;
     }
 
     toast.success(`${name} atualizado!`);

@@ -2,8 +2,8 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 
 import styled from 'styled-components';
 
-import { Button } from './Button';
-import { QRCodeModal } from './QRCodeModal';
+import { Button } from '@/components/Button';
+import { QRCodeModal } from '@/components/QRCodeModal';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 interface FormState {
@@ -55,11 +55,11 @@ export const CheckoutForm = () => {
     message: '',
   };
   const [formState, setFormState] = useState<FormState>(formInitialValues);
-  const { storedValue, removeValue, totalPrice } = useLocalStorage('cart')
+  const { storedValue, totalPrice } = useLocalStorage('cart');
 
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    e.target.style.height = 'inherit'; // Reset height to ensure shrinking on delete
-    e.target.style.height = `${e.target.scrollHeight}px`; // Expand to fit content
+    e.target.style.height = 'inherit';
+    e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -90,7 +90,6 @@ export const CheckoutForm = () => {
     setQRCodeUrl(data.qrCode);
     setIsQRCodeModalOpen(true);
   };
-
 
   const closeModal = () => {
     setIsQRCodeModalOpen(false);

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { Button } from '../Button';
-import { Icon } from '../Icon';
-import { Image } from '../Image';
+import { Button } from '@/components/Button';
+import { Icon } from '@/components/Icon';
+import { Image } from '@/components/Image';
 import { CartItemProps } from '@/types';
 import { formatCurrency } from '@/utils';
 

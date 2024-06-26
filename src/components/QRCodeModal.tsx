@@ -1,10 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
+import Image from 'next/image';
 import styled, { keyframes } from 'styled-components';
 
-import { Button } from './Button';
-import Image from 'next/image';
+import { Button } from '@/components/Button';
 
 const fadeIn = keyframes`
   from {

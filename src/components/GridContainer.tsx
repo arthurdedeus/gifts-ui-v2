@@ -1,25 +1,25 @@
-
 import styled from 'styled-components';
 
+import amigos from '@/assets/images/amigos.webp';
+import aspirador from '@/assets/images/aspirador.jpeg';
+import bomba from '@/assets/images/bomba.jpeg';
+import buque from '@/assets/images/buque.jpeg';
+import cafe from '@/assets/images/cafe.jpeg';
+import capy from '@/assets/images/capy.jpeg';
+import despedida from '@/assets/images/despedida.jpeg';
+import engov from '@/assets/images/engov.webp';
+import fofoca from '@/assets/images/fofoca.jpeg';
+import louca from '@/assets/images/louca.jpeg';
+import mergulho from '@/assets/images/mergulho.jpg';
+import netflix from '@/assets/images/netflix.jpeg';
+import noronha from '@/assets/images/noronha.jpeg';
+import parente from '@/assets/images/parente.jpeg';
+import passeio from '@/assets/images/passeio.webp';
+import pobre from '@/assets/images/pobre.jpeg';
+import quarto from '@/assets/images/quarto.jpeg';
+import silvio from '@/assets/images/silvio.webp';
+
 import { ProductItem } from './ProductItem';
-import bomba from '@/assets/images/bomba.jpeg'
-import silvio from '@/assets/images/silvio.webp'
-import passeio from '@/assets/images/passeio.webp'
-import fofoca from '@/assets/images/fofoca.jpeg'
-import engov from '@/assets/images/engov.webp'
-import despedida from '@/assets/images/despedida.jpeg'
-import noronha from '@/assets/images/noronha.jpeg'
-import quarto from '@/assets/images/quarto.jpeg'
-import louca from '@/assets/images/louca.jpeg'
-import pobre from '@/assets/images/pobre.jpeg'
-import buque from '@/assets/images/buque.jpeg'
-import cafe from '@/assets/images/cafe.jpeg'
-import capy from '@/assets/images/capy.jpeg'
-import amigos from '@/assets/images/amigos.webp'
-import mergulho from '@/assets/images/mergulho.jpg'
-import netflix from '@/assets/images/netflix.jpeg'
-import parente from '@/assets/images/parente.jpeg'
-import aspirador from '@/assets/images/aspirador.jpeg'
 
 const StyledGridContainer = styled.div`
   display: grid;
@@ -167,8 +167,7 @@ export const GridContainer: React.FC<GridContainerProps> = ({ setIsDrawerOpen })
       price: 150000,
       image: aspirador,
     },
-  ]
-
+  ];
 
   return (
     <StyledGridContainer>

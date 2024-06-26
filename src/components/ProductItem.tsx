@@ -4,11 +4,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import styled from 'styled-components';
 
-import { Product } from '../types';
-import { formatCurrency } from '../utils';
-import { Button } from './Button';
-import { Image } from './Image';
+import { Button } from '@/components/Button';
+import { Image } from '@/components/Image';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { Product } from '@/types';
+import { formatCurrency } from '@/utils';
 
 type ProductItemProps = {
   product: Product;
@@ -38,21 +38,21 @@ const Item = styled.div`
 `;
 
 export const ProductItem: React.FC<ProductItemProps> = ({ product, setIsDrawerOpen }) => {
-  const { addItem } = useLocalStorage('cart')
+  const { addItem } = useLocalStorage('cart');
 
   const handleAddToCart = () => {
     toast.success(`${product.name} adicionado ao carrinho!`);
     setIsDrawerOpen(true);
-    addItem(product)
+    addItem(product);
   };
 
   return (
     <Item>
       <Image src={product.image} alt={product.name} size="sm" />
       <h2 style={{ marginBottom: 0 }}>{product.name}</h2>
-      <p style={{ marginTop: '5px', }}>{product.description}</p>
+      <p style={{ marginTop: '5px' }}>{product.description}</p>
       <div>
-        <p style={{ marginBottom: '5px', }}>{formatCurrency(product.price)}</p>
+        <p style={{ marginBottom: '5px' }}>{formatCurrency(product.price)}</p>
         <Button text="Adicionar ao carrinho" onClick={handleAddToCart} />
       </div>
     </Item>

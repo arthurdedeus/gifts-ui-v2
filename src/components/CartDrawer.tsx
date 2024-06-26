@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 
-import { formatCurrency } from '../utils';
-import { Cart } from './Cart';
-import { Footer } from './Footer';
-import { Button } from './Button';
 import { useRouter } from 'next/navigation';
+
+import { Button } from '@/components/Button';
+import { Cart } from '@/components/Cart';
+import { Footer } from '@/components/Footer';
 import { AppRoutes } from '@/enums';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { formatCurrency } from '@/utils';
 
 interface CartDrawerProps {
   isOpen: boolean;

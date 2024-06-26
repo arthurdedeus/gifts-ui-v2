@@ -1,12 +1,13 @@
-"use client"
+'use client';
+
+import styled from 'styled-components';
+
 import { Cart } from '@/components/Cart';
 import { CheckoutForm } from '@/components/CheckoutForm';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { formatCurrency } from '@/utils';
-import styled from 'styled-components';
-
 
 const CartReviewContainer = styled.div`
   overflow-y: auto;
@@ -28,8 +29,8 @@ const CheckoutContainer = styled.div`
   justify-content: center;
 `;
 
-export default function Checkout () {
-  const { totalPrice } = useLocalStorage('cart')
+export default function Checkout() {
+  const { totalPrice } = useLocalStorage('cart');
 
   return (
     <CheckoutContainer>
@@ -53,4 +54,4 @@ export default function Checkout () {
       </Footer>
     </CheckoutContainer>
   );
-};
+}

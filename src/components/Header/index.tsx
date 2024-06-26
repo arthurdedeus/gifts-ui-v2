@@ -1,15 +1,15 @@
-
+import { useRouter } from 'next/navigation';
 import styled from 'styled-components';
 
-import { CartIcon } from '../CartIcon';
-import './Header.css';
 import { pink } from '@/colors';
+import { CartIcon } from '@/components/CartIcon';
+import '@/components/Header/Header.css';
 import { AppRoutes } from '@/enums';
-import { useRouter } from 'next/navigation';
 
 type StyledHeaderProps = {
   isCheckout: boolean;
 };
+
 const StyledHeader = styled.header<StyledHeaderProps>`
   width: 100%;
   padding: 10px 10px;
@@ -29,10 +29,9 @@ const StyledHeader = styled.header<StyledHeaderProps>`
 type HeaderProps = {
   isCheckout?: boolean;
   handleCartIconClick?: () => void;
-  isDrawerOpen?: boolean;
 };
 
-export const Header = ({ isCheckout = false, handleCartIconClick, isDrawerOpen }: HeaderProps) => {
+export const Header = ({ isCheckout = false, handleCartIconClick }: HeaderProps) => {
   const router = useRouter();
   const handletTitleClick = () => {
     router.push(AppRoutes.HOME);
@@ -40,7 +39,10 @@ export const Header = ({ isCheckout = false, handleCartIconClick, isDrawerOpen }
 
   return (
     <StyledHeader className="header" isCheckout={isCheckout}>
-      <h1 style={{ margin: 0, cursor: 'pointer', fontSize: '1.6rem', fontWeight: 300 }} onClick={handletTitleClick}>
+      <h1
+        style={{ margin: 0, cursor: 'pointer', fontSize: '1.6rem', fontWeight: 300 }}
+        onClick={handletTitleClick}
+      >
         Presentes Carla e Arthur
       </h1>
       {!isCheckout && <CartIcon onClick={handleCartIconClick} />}

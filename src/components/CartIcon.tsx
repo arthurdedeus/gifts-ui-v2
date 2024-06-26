@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Icon } from './Icon';
+import { Icon } from '@/components/Icon';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
 
 type CartIconProps = {
@@ -8,7 +8,7 @@ type CartIconProps = {
 };
 
 export const CartIcon = ({ onClick }: CartIconProps) => {
-  const { storedValue } = useLocalStorage('cart')
+  const { storedValue } = useLocalStorage('cart');
   const itemCount = storedValue.items.reduce((total, item) => total + item.quantity, 0);
 
   const handleClick = (event: React.MouseEvent) => {

@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Carthur Wedding Gifts
+This is a Next.js e-commerce application for wedding gifts. The app features a selection of humorous gifts, a shopping cart persisted in local storage, and a checkout page using Pix. The app is deployed on Vercel.
 
-## Getting Started
+![Vercel deployments](https://img.shields.io/github/deployments/arthurdedeus/gifts-ui-v2/production?logo=vercel&label=deployment)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## Features
+
+- **Main Page**: Browse a selection of humorous gifts.
+- **Shopping Cart**: Add items to the cart, which are persisted in local storage.
+- **Checkout Page**: Complete your purchase using Pix.
+- **Vercel KV Storage**: Store checkout items, buyer's name, email, and message.
+
+## Setup and Installation
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (Ensure you have Node.js installed)
+
+### Environment Variables
+
+Create a `.env.development.local` file in the root of your project and add the following variables:
+
+```.env
+Created by Vercel CLI
+
+KV_REST_API_READ_ONLY_TOKEN=
+KV_REST_API_TOKEN=
+KV_REST_API_URL=
+KV_URL=
+
+Created by me
+
+API_SECRET_KEY=
+PIX_KEY=
+PIX_NAME=
+PIX_CITY=
 ```
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/arthurdedeus/gifts-ui-v2.git
+    cd gifts-ui-v2
+    ```
+
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Run the development server:
+    ```bash
+    npm run dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The app is deployed using Vercel. To deploy your own version:
 
-## Learn More
+1. Replace the gifts in the main page.
+2. Connect your repository to Vercel.
+3. Set up the environment variables in Vercel's dashboard.
+4. Set up KV storage.
+5. Deploy the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you want to reuse this codebase for a different purpose, you will need to:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Replace the gift items on the main page.
+- Update any relevant content and styles.
+- Reconfigure and redeploy the application on Vercel.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please open an issue or submit a pull request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For any inquiries, please contact [arthurdedeus@gmail.com].
+
+---
+
+Happy gifting!
